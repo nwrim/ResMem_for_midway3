@@ -130,3 +130,9 @@ dmypy.json
 
 # the conda environment
 conda_env/*
+
+# outputs
+outputs/*
+
+# sbatches
+*.sbatch
