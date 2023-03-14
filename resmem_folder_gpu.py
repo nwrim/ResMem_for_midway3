@@ -7,9 +7,7 @@ import numpy as np
 import os
 import pandas as pd
 import argparse
-import time
 
-time0 = time.time()
 
 class ImageOnlyDataset(Dataset):
     def __init__(self, loc, transform=transformer):
@@ -75,6 +73,3 @@ if len(d_test):
     df.to_csv(output_dir, index=False)
 else:
     print(f'No data found in {loc}')
-
-time1 = time.time()
-print(f'it took {time1 - time0} seconds')

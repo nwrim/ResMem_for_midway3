@@ -3,9 +3,7 @@ from resmem import ResMem, transformer
 from PIL import Image
 import pandas as pd
 import argparse
-import time
 
-time0 = time.time()
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--loc', type=str)
@@ -35,6 +33,3 @@ for f in sorted(files):
 
 df = pd.DataFrame({'img_name':names, 'resmem_pred':preds})
 df.to_csv(output_dir, index=False)
-
-time1 = time.time()
-print(f'it took {time1 - time0} seconds')
