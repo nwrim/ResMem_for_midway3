@@ -67,7 +67,7 @@ if len(d_test):
             name, x = batch
             bs, c, h, w = x.size()
             pred = model.forward(x.cuda().view(-1, c, h, w)).view(bs, -1).mean(1)
-            preds += pred.squeeze().tolist()
+            preds += pred.tolist()
             names += name
     df = pd.DataFrame({'img_name':names, 'resmem_pred':preds})
     df.to_csv(output_dir, index=False)
